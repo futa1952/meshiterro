@@ -451,3 +451,215 @@ Processing by PostImagesController#index as HTML
 Completed 200 OK in 186ms (Views: 180.8ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/post_images/" for 10.0.2.2 at 2020-07-09 07:42:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  Rendered post_images/index.html.erb within layouts/application (19.5ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = '28f0a052ee431d3134816cf171b8e0b6117be80055af05f091b7cefff8afb069899493b6b62210bccb8037dc1def218d621cdb64762e2be20e50fdeea5b5736a'
+```
+
+):
+    10:               <div class="block-image">
+    11:                 <div class="view view-first">
+    12:                   <%= link_to post_image_path(post_image.id) do %>
+    13:                   <%= attachment_image_tag post_image, :image %>
+    14:                   <% end %>
+    15:                 </div>
+    16:               </div>
+  
+app/views/post_images/index.html.erb:13:in `block (2 levels) in _app_views_post_images_index_html_erb___4172614730416055604_70166749653420'
+app/views/post_images/index.html.erb:12:in `block in _app_views_post_images_index_html_erb___4172614730416055604_70166749653420'
+app/views/post_images/index.html.erb:7:in `_app_views_post_images_index_html_erb___4172614730416055604_70166749653420'
+Started GET "/post_images/" for 10.0.2.2 at 2020-07-09 07:42:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.3ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  Rendered post_images/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = '12611c5161394b3defe2bb64eb599011da5492251811b963270b75030cda6ace02cf1c0db39e4d438d17a0df0865f7dbf7b84d60b01cca70fed97cae0ac081f9'
+```
+
+):
+    10:               <div class="block-image">
+    11:                 <div class="view view-first">
+    12:                   <%= link_to post_image_path(post_image.id) do %>
+    13:                   <%= attachment_image_tag post_image, :image %>
+    14:                   <% end %>
+    15:                 </div>
+    16:               </div>
+  
+app/views/post_images/index.html.erb:13:in `block (2 levels) in _app_views_post_images_index_html_erb___4172614730416055604_70166753967960'
+app/views/post_images/index.html.erb:12:in `block in _app_views_post_images_index_html_erb___4172614730416055604_70166753967960'
+app/views/post_images/index.html.erb:7:in `_app_views_post_images_index_html_erb___4172614730416055604_70166753967960'
+Started GET "/post_images" for 10.0.2.2 at 2020-07-09 07:42:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.9ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  Rendered post_images/index.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Refile.secret_key was not set.
+
+Please add the following to your Refile configuration and restart your application:
+
+```
+Refile.secret_key = '22d387dd8c2445164ec32abe03e522b2c68504e10a9b4afe4bfea9a1d61c10e662d21e69749628097b1923cb698c57e9eedccd2d7cabc7ce1fb5767c25c17204'
+```
+
+):
+    10:               <div class="block-image">
+    11:                 <div class="view view-first">
+    12:                   <%= link_to post_image_path(post_image.id) do %>
+    13:                   <%= attachment_image_tag post_image, :image %>
+    14:                   <% end %>
+    15:                 </div>
+    16:               </div>
+  
+app/views/post_images/index.html.erb:13:in `block (2 levels) in _app_views_post_images_index_html_erb___4172614730416055604_40260340'
+app/views/post_images/index.html.erb:12:in `block in _app_views_post_images_index_html_erb___4172614730416055604_40260340'
+app/views/post_images/index.html.erb:7:in `_app_views_post_images_index_html_erb___4172614730416055604_40260340'
+Started GET "/post_images" for 10.0.2.2 at 2020-07-09 07:45:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.8ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  Rendered post_images/index.html.erb within layouts/application (908.0ms)
+Completed 200 OK in 1362ms (Views: 1312.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/attachments/7c62b1fc3ac2ba31c4fb42cb139d61d3a569406c/store/c6946b6d7ae2ec0ea7e7e98099bea7228634571de5494b77e91d9481b21b/image" for 10.0.2.2 at 2020-07-09 07:45:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-09 07:45:17 +0000] GET "/7c62b1fc3ac2ba31c4fb42cb139d61d3a569406c/store/c6946b6d7ae2ec0ea7e7e98099bea7228634571de5494b77e91d9481b21b/image" 200 40.7ms
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-09 07:45:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  Rendered post_images/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 217ms (Views: 184.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-09 07:45:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  Rendered post_images/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 180ms (Views: 161.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-09 07:45:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 168ms (Views: 147.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-09 07:45:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 167ms (Views: 143.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-09 07:45:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  Rendered post_images/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 157ms (Views: 142.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/post_images/1" for 10.0.2.2 at 2020-07-09 07:45:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.6ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  Rendered post_images/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 190ms (Views: 164.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-09 07:45:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.0ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  Rendered post_images/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 164ms (Views: 128.8ms | ActiveRecord: 3.2ms)
+
+
