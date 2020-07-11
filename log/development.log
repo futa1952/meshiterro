@@ -1353,3 +1353,1118 @@ Completed 404 Not Found in 10ms (ActiveRecord: 2.5ms)
 ActiveRecord::RecordNotFound (Couldn't find PostImage with 'id'=2):
   
 app/controllers/post_images_controller.rb:18:in `show'
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:30:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 187ms (Views: 166.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/post_images" for 10.0.2.2 at 2020-07-11 03:31:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A7L2hkeKZw2VZ2XUqWCkQrV9FvcHOW/Gv+6tNdZh3FPMeNOZI8dqcFR1NHnqJTn4+Ky0w9JQggo+G8HRRkScgQ==", "post_image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f60a19d2610 @tempfile=#<Tempfile:/tmp/RackMultipart20200711-7742-1cvrx1z.heic>, @original_filename="18196066-F61F-4ADC-BAF0-3C03748B027A.heic", @content_type="image/heic", @headers="Content-Disposition: form-data; name=\"post_image[image]\"; filename=\"18196066-F61F-4ADC-BAF0-3C03748B027A.heic\"\r\nContent-Type: image/heic\r\n">, "shop_name"=>"camp", "caption"=>"chikin"}, "commit"=>"送信"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mPostImage Create (3.9ms)[0m  [1m[32mINSERT INTO "post_images" ("shop_name", "image_id", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["shop_name", "camp"], ["image_id", "505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175"], ["caption", "chikin"], ["user_id", 1], ["created_at", "2020-07-11 03:31:00.527909"], ["updated_at", "2020-07-11 03:31:00.527909"]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+Redirected to http://localhost:3000/post_images
+Completed 302 Found in 90ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:31:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.4ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 256ms (Views: 244.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/attachments/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" for 10.0.2.2 at 2020-07-11 03:31:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:31:01 +0000] GET "/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" 200 132.7ms
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:31:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.9ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 210ms (Views: 191.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/attachments/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" for 10.0.2.2 at 2020-07-11 03:31:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:31:08 +0000] GET "/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" 200 37.4ms
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:31:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 223ms (Views: 201.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/attachments/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" for 10.0.2.2 at 2020-07-11 03:31:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:31:10 +0000] GET "/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" 200 30.1ms
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:31:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.9ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 239ms (Views: 213.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/attachments/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" for 10.0.2.2 at 2020-07-11 03:31:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:31:13 +0000] GET "/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" 200 38.0ms
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:31:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.5ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 211ms (Views: 198.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/attachments/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" for 10.0.2.2 at 2020-07-11 03:31:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:31:17 +0000] GET "/4f178b7128039f60ea0a887cd8e3beef763d46bb/store/505b1d2c26df408f7518e90e858b7562ec72a81466129f1a3b3ab3378175/image" 200 147.5ms
+
+Started GET "/2" for 10.0.2.2 at 2020-07-11 03:31:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/2"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:31:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 209ms (Views: 190.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:31:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.5ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:32
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.7ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 201ms (Views: 168.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:33:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.9ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:32
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (1.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 347ms (Views: 317.9ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/post_images/2/favorites" for 10.0.2.2 at 2020-07-11 03:34:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"RTvNqXt4MGKbiAHYhS0BaYrfV7nL916gmmjYSoNfXX4WuPWar+AQJPtnPS9ez2oxP4LbNF6UeEmCqqtOmOjiQA==", "post_image_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (0.5ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mFavorite Create (6.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "post_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["post_image_id", 2], ["created_at", "2020-07-11 03:34:40.213677"], ["updated_at", "2020-07-11 03:34:40.213677"]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6
+Redirected to http://localhost:3000/post_images/2
+Completed 302 Found in 36ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:34:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (0.5ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.8ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 241ms (Views: 223.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:34:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.8ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 203ms (Views: 186.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:34:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (3.9ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.7ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 229ms (Views: 174.5ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:35:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 176ms (Views: 163.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/post_images" for 10.0.2.2 at 2020-07-11 03:36:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1wUd2vKoIF+VNPx/1vupCdeSsK5cHwQmU1S2Xal4PacYzzjFluUtIlQmrdKVvjSzmkMSmol26erSodq5OV19dQ==", "post_image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f60a30fbd78 @tempfile=#<Tempfile:/tmp/RackMultipart20200711-7742-1w40rzm.jpeg>, @original_filename="IMG_0841.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post_image[image]\"; filename=\"IMG_0841.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "shop_name"=>"camp", "caption"=>"chikin"}, "commit"=>"送信"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mPostImage Create (5.2ms)[0m  [1m[32mINSERT INTO "post_images" ("shop_name", "image_id", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["shop_name", "camp"], ["image_id", "c5594473afb01c4c33ff074bfc7e5d7999a6ffaa8c77c3d49e2c07b8fe1d"], ["caption", "chikin"], ["user_id", 1], ["created_at", "2020-07-11 03:36:41.640193"], ["updated_at", "2020-07-11 03:36:41.640193"]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+Redirected to http://localhost:3000/post_images
+Completed 302 Found in 63ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:36:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.6ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 282ms (Views: 264.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/attachments/a73c3a654adc69035c1a45baa3ed059e70abc10f/store/c5594473afb01c4c33ff074bfc7e5d7999a6ffaa8c77c3d49e2c07b8fe1d/image" for 10.0.2.2 at 2020-07-11 03:36:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:36:42 +0000] GET "/a73c3a654adc69035c1a45baa3ed059e70abc10f/store/c5594473afb01c4c33ff074bfc7e5d7999a6ffaa8c77c3d49e2c07b8fe1d/image" 200 42.0ms
+
+Started GET "/post_images/3" for 10.0.2.2 at 2020-07-11 03:36:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.9ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:32
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.6ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 199ms (Views: 173.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/post_images/3/favorites" for 10.0.2.2 at 2020-07-11 03:36:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"WJ1NwNfhVj8K/GBH2jPchd2vdXSx9mYxQKP5Ezt3elkLHnXzA3l2eWoTXLAB0bfdaPL5+SSVQNhYYYoXIMDFZw==", "post_image_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (0.8ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mPostImage Load (1.3ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[36mFavorite Create (4.6ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "post_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["post_image_id", 3], ["created_at", "2020-07-11 03:36:50.828911"], ["updated_at", "2020-07-11 03:36:50.828911"]]
+  ↳ app/controllers/favorites_controller.rb:6
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6
+Redirected to http://localhost:3000/post_images/3
+Completed 302 Found in 35ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/post_images/3" for 10.0.2.2 at 2020-07-11 03:36:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.2ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.9ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 253ms (Views: 230.9ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/post_images/3/post_comments" for 10.0.2.2 at 2020-07-11 03:36:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostCommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+llEA5ANQpy5vNjacMGBgxS760aNklIuDw2oBQPgX8+p2nwwRJVi2tlT5C2rI+rboeZnyxjxdMcXz9sBGFfg8Q==", "post_comment"=>{"comment"=>"chikin"}, "commit"=>"送信する", "post_image_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (2.1ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:6
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:6
+  [1m[36mPostComment Create (11.3ms)[0m  [1m[32mINSERT INTO "post_comments" ("comment", "user_id", "post_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["comment", "chikin"], ["user_id", 1], ["post_image_id", 3], ["created_at", "2020-07-11 03:36:58.720530"], ["updated_at", "2020-07-11 03:36:58.720530"]]
+  ↳ app/controllers/post_comments_controller.rb:6
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:6
+Redirected to http://localhost:3000/post_images/3
+Completed 302 Found in 45ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/post_images/3" for 10.0.2.2 at 2020-07-11 03:36:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (2.3ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.9ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:61
+  Rendered post_images/show.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 296ms (Views: 267.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:37:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 169ms (Views: 153.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:37:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 186ms (Views: 168.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:37:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.8ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 200ms (Views: 181.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:43:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `reverse_order' for nil:NilClass):
+  
+app/controllers/post_images_controller.rb:14:in `index'
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:44:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `reverse_order' for nil:NilClass):
+  
+app/controllers/post_images_controller.rb:14:in `index'
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:44:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `reverse_order' for nil:NilClass):
+  
+app/controllers/post_images_controller.rb:14:in `index'
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:45:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.6ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (854.4ms)
+Completed 200 OK in 1285ms (Views: 1238.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:45:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 248ms (Views: 228.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/post_images" for 10.0.2.2 at 2020-07-11 03:46:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMesGlfPNBm0dF7JR6fn5Sg20NtFe7N5PVrCvRLQIPufDYkFM4I5ZHVmD2QE4npfZedy75ASXrW8r65ZgvVgKQ==", "post_image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f037c7e2558 @tempfile=#<Tempfile:/tmp/RackMultipart20200711-8100-efk5pl.jpeg>, @original_filename="IMG_0496.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post_image[image]\"; filename=\"IMG_0496.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "shop_name"=>"beer", "caption"=>"beer"}, "commit"=>"送信"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mPostImage Create (2.8ms)[0m  [1m[32mINSERT INTO "post_images" ("shop_name", "image_id", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["shop_name", "beer"], ["image_id", "6e7395a5a6571504a38264979f333b3902650031e6714fd771fc3134a240"], ["caption", "beer"], ["user_id", 1], ["created_at", "2020-07-11 03:46:32.024118"], ["updated_at", "2020-07-11 03:46:32.024118"]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+Redirected to http://localhost:3000/post_images
+Completed 302 Found in 84ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:46:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.1ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 184ms (Views: 170.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/attachments/4a165fa09054d618416201fef9b1e435b3b67f79/store/6e7395a5a6571504a38264979f333b3902650031e6714fd771fc3134a240/image" for 10.0.2.2 at 2020-07-11 03:46:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-07-11 03:46:32 +0000] GET "/4a165fa09054d618416201fef9b1e435b3b67f79/store/6e7395a5a6571504a38264979f333b3902650031e6714fd771fc3134a240/image" 200 368.7ms
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:47:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (1.9ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.5ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 240ms (Views: 194.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/post_images/2" for 10.0.2.2 at 2020-07-11 03:48:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (5.0ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.7ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/show.html.erb:51
+  Rendered post_images/show.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 236ms (Views: 202.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:49:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (2.2ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 303ms (Views: 265.3ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:49:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.4ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 332ms (Views: 313.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:49:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.9ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 270ms (Views: 247.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/post_images/3" for 10.0.2.2 at 2020-07-11 03:50:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mPostImage Load (2.7ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mFavorite Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."post_image_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_image_id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:25
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:38
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:48
+  [1m[36mPostComment Load (0.4ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/show.html.erb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:61
+  Rendered post_images/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 268ms (Views: 244.1ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:50:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.6ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 254ms (Views: 236.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:50:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.4ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (715.5ms)
+Completed 200 OK in 1171ms (Views: 1118.8ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:50:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.8ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 236ms (Views: 220.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-07-11 03:53:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  Rendered post_images/index.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 239ms (Views: 222.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:53:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 198ms (Views: 185.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/post_images" for 10.0.2.2 at 2020-07-11 03:53:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NpKUA1NHBUdseMuw+k8yrOt4vQ1pzdtveds0C82hJD35WLEcNwoIOq1qmh25Cq8WpqkfObykNqP4LljvXYRk7w==", "post_image"=>{"image"=>"{}", "shop_name"=>"", "caption"=>""}, "commit"=>"送信"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mPostImage Create (4.9ms)[0m  [1m[32mINSERT INTO "post_images" ("shop_name", "image_id", "caption", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["shop_name", ""], ["image_id", nil], ["caption", ""], ["user_id", 1], ["created_at", "2020-07-11 03:53:36.758331"], ["updated_at", "2020-07-11 03:53:36.758331"]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+Redirected to http://localhost:3000/post_images
+Completed 302 Found in 32ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:53:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.4ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 5]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:37
+  Rendered post_images/index.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 235ms (Views: 214.0ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:55:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (1.1ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 5]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:37
+  Rendered post_images/index.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 234ms (Views: 216.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/post_images" for 10.0.2.2 at 2020-07-11 03:56:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostImagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/index.html.erb within layouts/application
+  [1m[36mPostImage Load (0.6ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/post_images/index.html.erb:7
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 5]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 4]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 3]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/index.html.erb:27
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/index.html.erb:30
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_images"[0m
+  ↳ app/views/post_images/index.html.erb:37
+  Rendered post_images/index.html.erb within layouts/application (731.8ms)
+Completed 200 OK in 1055ms (Views: 999.1ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/post_images/new" for 10.0.2.2 at 2020-07-11 03:56:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 204ms (Views: 185.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/post_images" for 10.0.2.2 at 2020-07-11 03:56:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dLzxXiMuhuwqNLGLPN3gwcuNqndYxsQjGs9g1bF0eCO7dtRBR2OLkesm4CZ/mH17hlwIQ42vKe+bOgwxIVE48Q==", "post_image"=>{"image"=>"{}", "shop_name"=>"", "caption"=>""}, "commit"=>"送信"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/post_images_controller.rb:9
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 267ms (Views: 213.6ms | ActiveRecord: 2.0ms)
+
+
